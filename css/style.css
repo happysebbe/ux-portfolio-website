@@ -1,0 +1,885 @@
+
+/************************************************************/
+/* CSS Reset ************************************************/
+/************************************************************/
+
+html, body {
+	font-size: 100%;
+}
+
+html, body, header, footer, main, nav, section, div, 
+h1, h2, h3, h4, p, a, ul, li, blockquote, 
+figure, figcaption, img, picture, source {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+header, footer, nav, main, section, figure {
+	display: block;
+}
+
+img, a, nav, ul, li {
+	box-sizing: border-box;
+}
+
+@-ms-viewport	{ width: device-width; }
+@viewport		{ width: device-width; }
+
+/************************************************************/
+/* Common Settings ******************************************/
+/************************************************************/
+
+body {
+	font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+	line-height: 1.8;
+	color: #000000;
+	background-color: #F2F8FD;
+}
+
+header {
+	width: 100%; /* Need to specify W because of Fixed Positioning */
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	/* Need to specify background-color because of Fixed Positioning ***/
+	/* Otherwise the Content background overlays header when scrolling */
+	background-color: #F2F8FD;
+	border-bottom: 2px solid #D5D5D5;
+}
+
+footer {
+	border-top: 2px solid #D5D5D5;
+}
+
+/************************************************************/
+
+/* Hiding the visibility of text on screen */
+/* But, this text will be accessible to Screen Readers and other Assistive Techs */
+/* Used for Headings and Captions that are not to be visually seen */
+/* These Headings are given to maintain consistent Content Hierarchy */
+
+.hidden-text {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	line-height: 0;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/************************************************************/
+/* The Wrappers *********************************************/
+/************************************************************/
+
+.header-wrapper {
+	margin: 0.5rem auto 0 auto;
+	width: 95%;
+}
+
+@media all and (min-width: 37rem) {
+.header-wrapper {
+	width: 90%;
+}
+}
+
+@media all and (min-width: 50rem) {
+.header-wrapper {
+	max-width: 70rem;
+}
+}
+
+/************************************************************/
+
+.footer-wrapper {
+	margin: 0.5rem auto 0.5rem auto;
+	width: 95%;
+}
+
+@media all and (min-width: 37rem) {
+.footer-wrapper {
+	margin: 1rem auto 1rem auto;
+	width: 90%;
+}
+}
+
+@media all and (min-width: 50rem) {
+.footer-wrapper {
+	max-width: 70rem;
+}
+}
+
+/************************************************************/
+
+#about main, #projects main, #resume main, #featured main, #error main {
+	background-color: #FFFFFF;
+}
+
+.content-filler {
+	width: 100%; /* Need to specify W because of Fixed Positioning */
+	height: 2rem;
+	position: fixed;
+	top: 6.5rem;
+	z-index: 10;
+	background-image: -webkit-linear-gradient(#FFFFFF 20%, transparent); /* for old Andriods */
+	background-image: linear-gradient(#FFFFFF 20%, transparent);
+}
+
+@media all and (min-width: 37rem) {
+.content-filler {
+	top: 6rem;
+}
+}
+
+@media all and (min-width: 50rem) {
+.content-filler {
+	top: 3.5rem;
+}
+}
+
+/************************************************************/
+
+.content-wrapper {
+	margin: 6.5rem auto 0 auto;
+	padding-top: 2rem; /* Adjusting for the content-filler */
+	width: 90%;
+	padding-bottom: 5rem;
+}
+
+@media all and (min-width: 37rem) {
+.content-wrapper {
+	margin: 6rem auto 0 auto;
+	width: 80%;
+}
+}
+
+@media all and (min-width: 50rem) {
+.content-wrapper {
+	margin: 3.5rem auto 0 auto;
+	width: 40rem;
+}
+}
+
+/************************************************************/
+/* The Headings h3 and h4 ***********************************/
+/************************************************************/
+
+h3 {
+	font-size: 1.4rem;
+	font-weight: bold;
+	line-height: 1.6;
+	margin: 2.5rem 0 0.5rem 0
+}
+
+h4 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	line-height: 1.6;
+	margin: 1.5rem 0 0.5rem 0
+}
+
+/************************************************************/
+/* Website Logo *********************************************/
+/************************************************************/
+
+.logo {
+	float: left;
+}
+
+.logo a:link, .logo a:visited {
+	width: 3rem;
+	height: 3rem;
+	display: block;
+	/* hiding the link text */
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	/* displaying the logo */
+	background-color: #F2F8FD;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-image: url("../img/logo-small-black.svg");
+}
+
+@media all and (min-width: 37rem) {
+.logo a:link, .logo a:visited {
+	width: 10rem;
+	height: 2.5rem;
+	background-image: url("../img/logo-big-black.svg");
+}
+}
+
+.logo a:hover, .logo a:focus {
+	border-radius: 0.2rem;
+	outline: 0;
+	background-color: #1979AA;
+	background-size: 90%;
+	background-image: url("../img/logo-small-white.svg");
+}
+
+@media all and (min-width: 37rem) {
+.logo a:hover, .logo a:focus {
+	background-image: url("../img/logo-big-white.svg");
+}
+}
+
+.logo a:active {
+	border-radius: 0.2rem;
+	outline: 0;
+	color: #999999;
+	background-color: #999999;
+	background-image: none;
+}
+
+/************************************************************/
+/* Email Button *********************************************/
+/************************************************************/
+
+header .email-button {
+	margin-top: 0.3rem;
+	float: right;
+}
+
+@media all and (min-width: 37rem) {
+header .email-button {
+	margin-top: 0;
+}
+}
+
+main .email-button {
+	width: 9rem;
+	margin: 0 auto;
+}
+
+@media all and (min-width: 37rem) {
+main .email-button {
+	margin: 0;
+}
+}
+
+.email-button a:link, .email-button a:visited {
+	width: 9rem;
+	display: block;
+	border: 2px solid #1979AA;
+	border-radius: 1.5rem;
+	background-color: #F5F5DC; /* fallback */
+	background-image: -webkit-linear-gradient(#FFFFFF, #959595); /* for old Andriods */
+	background-image: linear-gradient(#FFFFFF, #959595);
+	color: #000000;
+	font-size: 1rem;
+	font-weight: bold;
+	line-height: 2.2;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #FFFFFF; 
+}
+
+.email-button a:hover, .email-button a:focus {
+	outline: 0;
+	border: 2px solid #959595;
+	background-color: #1979AA;
+	background-image: none;
+	color: #FFFFFF;
+	font-weight: normal;
+	text-shadow: none;
+}
+
+.email-button a:active {
+	outline: 0;
+	border: 2px solid #959595;
+	background-color: #999999;
+	background-image: none;
+	color: #999999;
+	text-shadow: none;
+}
+
+/************************************************************/
+/* Site Navigation ******************************************/
+/************************************************************/
+
+.main-menu {
+	width: 100%;
+	margin-top: 0.5rem;
+	margin-bottom: -2px;
+	text-align: center;
+	float: right;
+}
+
+@media all and (min-width: 50rem) {
+.main-menu {
+	width: 50%;
+	margin-top: 0;
+	padding-right: 1rem;
+	text-align: right;
+}
+}
+
+.main-menu ul {
+	list-style-type: none;
+	font-size: 0; /* To remove vertical space between list items */
+}
+
+li.menu-item {
+	width: 33.3%;
+	height: 2.5rem;
+	display: inline-block;
+}
+
+@media all and (min-width: 50rem) {
+li.menu-item {
+	width: 32%;
+	max-width: 9rem;
+	height: 3rem;
+}
+}
+
+li.menu-item a:link, li.menu-item a:visited {
+	height: 2.5rem;
+	display: block;
+	margin-left: -2px;
+	border-style: solid;
+	border-color: #D5D5D5;
+	border-width: 2px 2px 2px 2px;
+	background-color: #F2F8FD;
+	color: #000000;
+	font-size: 1rem;
+	font-weight: normal;
+	line-height: 2.4;
+	text-align: center;
+	text-decoration: none;
+}
+
+@media all and (min-width: 50rem) {
+li.menu-item a:link, li.menu-item a:visited {
+	height: 3rem;
+	line-height: 2.8;
+	border-radius: 0.5rem 0.5rem 0 0;
+}
+}
+
+li.menu-item a:hover, li.menu-item a:focus {
+	outline: 0 !important;
+	border-bottom-color: #1979AA !important;
+	background-color: #1979AA !important;
+	color: #FFFFFF !important;
+	font-weight: normal !important;
+}
+
+li.menu-item a:active {
+	outline: 0 !important;
+	background-color: #999999 !important;
+	color: #999999 !important;
+}
+/* !important is given so that this will override the higher specificity, */
+/* of the style given below to indicate the current page */
+
+/* To indicate the Current Page */
+#about a.about-page, #projects a.projects-page, #resume a.resume-page, #featured a.projects-page {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-weight: bold;
+	border-bottom-color: #FFFFFF;
+}
+
+/************************************************************/
+/* Homepage Styling *****************************************/
+/************************************************************/
+
+.home-wrapper img {
+	width: 100%;
+	max-width: 2500px;
+	display: block;
+	margin: 0 auto;
+}
+
+/************************************************************/
+/* About Page Styling ***************************************/
+/************************************************************/
+
+.photo-frame {
+	width: 10rem;
+	height: 10rem;
+	margin: 1rem auto 2rem auto;
+	border-radius: 50%;
+	border: 2px solid #D5D5D5;
+}
+
+@media all and (min-width: 37rem) {
+.photo-frame {
+	margin: 1rem 2.5rem 3rem 0;
+ 	float: left;
+}
+}
+
+.photo-image {
+	width: 10rem;
+	height: 10rem;
+	display: block;
+	border-radius: 50%;
+	-webkit-filter: sepia(20%); /* Safari 6.0 - 9.0 */
+	filter:         sepia(20%);
+}
+
+.hello-text {
+	margin: 2rem auto 3rem auto;
+	text-align: center;
+}
+
+@media all and (min-width: 37rem) {
+.hello-text {
+	margin: 3rem 0 0 0;
+	text-align: left;
+}
+}
+
+.hello-hey {
+	font-size: 2.6rem;
+	font-weight: bold;
+	line-height: 1.6;
+}
+
+.intro-text {
+	clear: both;
+}
+
+.intro-text p {
+	margin: 2rem 0;
+}
+
+/************************************************************/
+
+.question-hey {
+	display: inline-block;
+	margin: 1rem 0 1rem 0;
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+@media all and (min-width: 37rem) {
+.question-hey {
+	margin: 2rem 0 1rem 0;
+}
+}
+
+@media all and (min-width: 50rem) {
+.question-hey {
+	margin: 3rem 0 1rem 0;
+}
+}
+
+.question-list {
+	margin: 0 0 2rem 1.2rem;
+}
+
+.sign-image {
+	height: 4rem;
+	margin: 2rem 0 -1rem 0;
+	opacity: 0.9;
+}
+
+/************************************************************/
+/* Common for Projects, Featured, and Resume Pages **********/
+/************************************************************/
+
+.my-quote {
+	margin: 0;
+}
+
+@media all and (min-width: 37rem) {
+.my-quote {
+	margin: 2rem 0 3.5rem 0;
+}
+}
+
+.my-quote p {
+	padding: 1rem;
+	border: 1px solid #D5D5D5;
+	border-radius: 0.5rem;
+	color: #000000;
+	background-color: #FAFAF4;
+}
+
+.my-quote p::before {
+	content: '\201C';
+}
+
+.my-quote p::after {
+	content: '\201D';
+}
+
+@media all and (min-width: 37rem) {
+.my-quote p {
+	padding: 1rem 1rem 1rem 7.5rem;
+	/* displaying the icon */
+	background-repeat: no-repeat;
+	background-position: left 1.5rem top 50%;
+	background-size: 4rem;
+	background-image: url("../img/icon-talk.svg");
+}
+}
+
+.content-para {
+	margin: 0.5rem 0 0.5rem 1rem;
+}
+
+@media all and (min-width: 50rem) {
+.content-para {
+	margin: 0.5rem 0 0.5rem 1.5rem;
+}
+}
+
+.content-list {
+	margin: 0.5rem 0 0.5rem 2.2rem;
+}
+
+@media all and (min-width: 50rem) {
+.content-list {
+	margin: 0.5rem 0 0.5rem 2.7rem;
+}
+}
+
+.content-list li {
+	margin: 0.5rem 0;
+}
+
+.content-link:link, .content-link:visited {
+	color: #0033EE;
+}
+
+.content-link:hover, .content-link:focus {
+	outline: 0;
+	background-color: #1979AA;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.content-link:active {
+	outline: 0;
+	background-color: #999999;
+	color: #999999;
+}
+
+.action-call {
+	margin: 3rem 0 1rem 0;
+	border-top: 4px solid #D5D5D5;
+	padding-top: 3rem;
+	line-height: 1.6;
+	text-align: center;
+}
+
+@media all and (min-width: 37rem) {
+.action-call {
+	text-align: left;
+}
+}
+
+.pdf-icon {
+	width: 0;
+	height: 0;
+	display: inline-block;
+	/* hiding the text */
+	margin: 0;
+	padding: 0;
+	border: 0;
+	line-height: 0;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@media all and (min-width: 40rem) {
+.pdf-icon {
+	/* displaying the Icon */
+	width: 1.2rem;
+	height: 1.2rem;
+	display: inline-block;
+	vertical-align: -0.2rem; 
+	background-color: #FFFFFF;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-image: url("../img/icon-pdf.svg");
+}
+}
+
+.no-break {
+	white-space: nowrap;
+}
+
+/************************************************************/
+/* Featured Page Styling ************************************/
+/************************************************************/
+
+.breadcrumb-menu {
+	margin: 0 auto;
+	width: 90%;
+	padding-top: 0.2rem;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #D5D5D5;
+    box-shadow: 0 10px 15px -11px #959595;
+}
+
+@media all and (min-width: 37rem) {
+.breadcrumb-menu {
+	width: 80%;
+}
+}
+
+@media all and (min-width: 50rem) {
+.breadcrumb-menu {
+	width: 40rem;
+}
+}
+
+.breadcrumb-list li {
+	display: inline;
+}
+
+.breadcrumb-list li+li:before {
+	padding: 0.2rem;
+	color: black;
+	content: ">";
+}
+
+.breadcrumb-list li a:link, .breadcrumb-list li a:visited {
+	color: #0033EE;
+}
+
+.breadcrumb-list li a:hover, .breadcrumb-list li a:focus {
+	outline: 0;
+	background-color: #1979AA;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.breadcrumb-list li a:active {
+	outline: 0;
+	background-color: #999999;
+	color: #999999;
+}
+
+.project-image img {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	background-color: #FFFFFF;
+}
+
+.process-image img {
+	display: block;
+	margin: 2rem auto 0 auto;
+	width: 100%;
+	background-color: #FFFFFF;
+}
+
+@media all and (min-width: 37rem) {
+.process-image img {
+	margin: 3rem auto 0 auto;
+}
+}
+
+.process-image figcaption {
+	margin-bottom: 3rem;
+	border-bottom: 4px solid #D5D5D5;
+}
+
+@media all and (min-width: 37rem) {
+.process-image figcaption {
+	margin-bottom: 5rem;
+}
+}
+
+.bold-text {
+	font-weight: bold;
+}
+
+.special-para {
+	margin-top: 1rem;
+}
+
+.fun-stuff {
+	color: black;
+	font-size: 0.8rem;
+	-webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
+	filter:         blur(2px);
+	text-decoration: overline line-through underline wavy black;
+}
+
+/************************************************************/
+/* Error Page Styling ***************************************/
+/************************************************************/
+
+.error-image {
+	width: 0;
+	height: 0;
+}
+
+@media all and (min-width: 50rem) {
+.error-image {
+	width: 35%;
+	height: auto;
+	margin-right: 2rem;
+ 	float: left;
+}
+}
+
+.error-image img {
+	width: 100%;
+	display: block;
+}
+
+.error-text p {
+	margin: 1rem 0 2rem 0;
+}
+
+.error-clear {
+	clear: both;
+}
+
+/************************************************************/
+/* Social Media Links ***************************************/
+/************************************************************/
+
+.social-media {
+	list-style-type: none;
+	text-align: center;
+	margin-bottom: 0.5rem;
+}
+
+@media all and (min-width: 37rem) {
+.social-media {
+ 	float: right;
+	margin-left: 3rem;
+	margin-bottom: 1rem;
+}
+}
+
+/************************************************************/
+
+.social-media li {
+	display: inline-block;
+	border-radius: 50%;
+	border: 2px solid #959595;
+	background-color: #F5F5DC; /* fallback */
+	background-image: -webkit-linear-gradient(#FFFFFF, #959595); /* for old Andriods */
+	background-image:         linear-gradient(#FFFFFF, #959595);
+}
+
+.social-media li:last-child {
+	margin-left: 20%;
+}
+
+@media all and (min-width: 37rem) {
+.social-media li, .social-media li:last-child {
+	margin-left: 1rem;
+}
+}
+
+/************************************************************/
+
+.social-media a {
+	width: 3rem;
+	height: 3rem;
+	display: block;
+	border-radius: 50%;
+	/* hiding the link text */
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	/* setting the icon background */
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40%;
+	background-origin: content-box;
+	padding-left: 5%; /* Fine-tuning the icon's position */
+}
+
+.social-media a.linkedin:link, .social-media a.linkedin:visited {
+	background-image: url("../img/icon-linkedin-black.svg");
+}
+
+.social-media a.linkedin:hover, .social-media a.linkedin:focus {
+	outline: 0;
+	background-color: #1979AA;
+	background-image: url("../img/icon-linkedin-white.svg");
+}
+
+.social-media a.linkedin:active {
+	outline: 0;
+	color: #999999;
+	background-color: #999999;
+	background-image: none;
+}
+
+.social-media a.twitter:link, .social-media a.twitter:visited {
+	background-image: url("../img/icon-twitter-black.svg");
+}
+
+.social-media a.twitter:hover, .social-media a.twitter:focus {
+	outline: 0;
+	background-color: #1979AA;
+	background-image: url("../img/icon-twitter-white.svg");
+}
+
+.social-media a.twitter:active {
+	outline: 0;
+	color: #999999;
+	background-color: #999999;
+	background-image: none;
+}
+
+/************************************************************/
+/* Website Info about Privacy & Copyright *******************/
+/************************************************************/
+
+.website-info {
+	padding: 0.5rem 0.5rem 0.5rem 1rem;
+	border: 1px solid #D5D5D5;
+}
+
+@media all and (min-width: 37rem) {
+.website-info {
+	padding: 0;
+	border: 0;
+}
+}
+
+.website-info p {
+	font-size: 0.9rem;
+	line-height: 1.6;
+}
+
+.privacy-image {
+	width: 0.7rem;
+	height: 1rem;
+	display: inline-block;
+	/* hiding the : character */
+	margin: 0;
+	padding: 0;
+	border: 0;
+	line-height: 0;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	/* displaying the Icon */
+	vertical-align: text-top; 
+	opacity: 0.9;
+	background-color: #F2F8FD;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-image: url("../img/icon-privacy.svg");
+}
+
+/************************************************************/
+/* Done, Thank you ******************************************/
+/************************************************************/
